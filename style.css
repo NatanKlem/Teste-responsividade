@@ -7,7 +7,12 @@
     font-style: normal;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@font-face {
+    font-family: Bebas Neue;
+    src: url(fontes/BebasNeue-Regular.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 
 :root{
     --font-titulo: Android;
@@ -18,7 +23,6 @@
     --cor2: #84E1AD;
     --cor3: #39CF7C;
     --cor4: #207144;
-
 }
 
 *{
@@ -32,63 +36,46 @@ body{
 }
 
 header{
-    min-height: 150px;
-    text-align: center;
     background-image: linear-gradient(to top, var(--cor4), var(--cor3));
+    min-height: 200px;
+    text-align: center;
+    
 }
 
 header > h1{
-    color: white;
-    font-size: 3em;
     font-family: var(--font-titulo);
+    font-size: 2.5em;
+    color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0,0.733);
-    padding: 30px 0px 0px 0px;
-    margin: 0px 0px 25px 0px;
+    padding: 30px 1px 30px 1px;
 }
 
 header > p{
-    font-size: 1.1em;
+    font-family: var(--font-destaque);
+    font-size: 1.2em;
     color: white;
-    max-width: 500px;
+    max-width: 400px;
     margin: auto;
-    padding: 0px 0px 25px 0px;
+    padding: 1px 1px 20px 0px;
 }
 
-nav{
-    padding: 10px;
+header > nav{
     box-shadow: 0px 7px 7px rgba(0, 0, 0,0.192);
-}
-
-nav > a{
     padding: 10px;
-    text-decoration: none;
+}
+
+header > nav > a{
+    padding: 10px;
     color: white;
+    text-decoration: none;
     font-weight: bold;
-    transition-delay: 0.6s;
+    animation-duration: 0.6s;
 }
 
-nav > a:hover{
-    border-radius: 5px;
-    color: var(--cor4);
+header > nav > a:hover{
     background-color: var(--cor2);
-}
-
-strong{
-    color: var(--cor3);
-    font-weight: 550;
-}
-
-picture{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 7px 0px 7px 0px ;
-}
-
-img#imagem{
-    display: block;
-    margin: auto;
-    max-width: 350px;
+    color: var(--cor4);
+    border-radius: 5px;
 }
 
 main{
@@ -96,11 +83,23 @@ main{
     max-width: 900px;
     min-width: 100px;
     margin: auto;
-    margin-bottom: 20px;
     border-radius: 0px 0px 10px 10px;
 }
 
-main > section a{
+main > p{
+    text-align: justify;
+    text-indent: 1.2em;    
+    line-height: 1.4em;
+    margin-top: 7px;
+    margin-bottom: 7px; 
+    padding: 10px;
+}
+
+strong{
+    color: var(--cor3);
+}
+
+main > section a{ 
     text-decoration: none;
     color: var(--cor4);
     font-weight: bold;
@@ -115,26 +114,55 @@ main > section a:after{
     content: '\00A0\1F517';
 }
 
-main > section > p{
+main > aside a{ 
+    text-decoration: none;
+    color: var(--cor4);
+    font-weight: bold;
+}
+
+main > aside a:hover{
+    text-decoration: underline;
+    color: var(--cor2);
+}
+
+main > aside a:after{
+    content: '\00A0\1F517';
+}
+
+section{
+    padding: 15px 15px 1px 15px;
+}
+
+section > picture{
+    display: flex;
+    margin: auto;
+}
+
+section > picture img{
+    display: flex;
+    margin: auto;
+}
+
+section > img{
+    display: flex;
+    margin: auto;
+}
+
+section > p{ 
     text-align: justify;
     text-indent: 1.2em;    
     line-height: 1.4em;
+    margin-top: 7px;
+    margin-bottom: 7px;
 }
 
-main > aside > p{
-    text-align: justify;
-    text-indent: 1.2em;    
-    line-height: 1.4em;
+section#historia > h1{
+    font-family: var(--font-titulo);
+    color: var(--cor4);
+    margin-top: 7px;
 }
 
-main > p{
-    text-align: justify;
-    text-indent: 1.2em;    
-    line-height: 1.4em;
-    padding: 0px 10px 10px 10px;
-}
-
-main > section > h2{
+section#primeira > h2{
     font-family: var(--font-titulo);
     margin: 0px 0px 15px 0px;
     padding-left: 10px;
@@ -142,30 +170,18 @@ main > section > h2{
     color: var(--cor4);
 }
 
-
-section#historia{
-    padding: 10px;
-}
-
-section#historia > h1{
+section#novo > h2{
     font-family: var(--font-titulo);
-    color: var(--cor4);
     margin: 0px 0px 15px 0px;
-}
-
-section#primeira{
-    padding: 0px 10px 10px 10px;
-}
-
-section#novo{
-    padding: 0px 10px 10px 10px;
+    padding-left: 10px;
+    background-image: linear-gradient(to right, #84e1ac77, transparent);
+    color: var(--cor4);
 }
 
 section#video{
     background-color: var(--cor4);
-    margin-bottom: 20px;
+    margin-top: 20px;
     padding: 500px 0px 0px 0px;
-
     position: relative;
 }
 
@@ -177,12 +193,28 @@ section#video > iframe{
     height: 90%;
 }
 
-aside{
-    margin: 10px;
-    padding: 0px 10px 10px 10px;
-    background-color: #89fcbd;
+aside{ 
+    padding: 15px 15px 1px 15px;
+    background-color: var(--cor1);
     border-radius: 10px;
+    margin: 15px;
     box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.425);
+}
+
+aside > h3{
+    background-color: var(--cor3);
+    border-radius: 10px 10px 0px 0px;
+    padding: 6px;
+    margin: -14px -15px 0px -16px;
+    color: white;
+}
+
+aside > p{
+    text-align: justify;
+    text-indent: 1.2em;    
+    line-height: 1.4em;
+    margin-top: 10px;
+    margin-bottom: 7px;
 }
 
 aside > ul{
@@ -193,17 +225,10 @@ aside > ul{
     margin-top: 7px;
 }
 
-aside > h3{
-    background-color: #207144;
-    color: white;
-    border-radius: 10px 10px 0px 0px;
-    padding: 4px;
-    margin: 0px -10px 7px -10px;
-}
-
 footer{
     background-color: var(--cor4);
-    text-align: center;
+    padding: 5px;
     color: white;
-    padding: 7px;
+    text-align: center;
+    margin-top: 20px;
 }
